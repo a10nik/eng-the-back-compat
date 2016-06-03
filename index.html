@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Backwards Compatibility</title>
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+      
+    </script><!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script><![endif]-->
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>Backwards Compatibility</h1>
+          <p><small>Artyom Desyatnikov</small></p>
+          <aside class="notes">title. going to explore the book... </aside>
+        </section>
+        <section>
+          <h2>Points</h2>
+          <h3>Backwards Compatibility</h3>
+          <ul>
+            <li>Concept</li>
+            <li>Why it is hard</li>
+            <li>What if we don't</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Concept</h2>
+          <ul>
+            <li>Versioning</li>
+            <li>Consistence between versions</li>
+            <li>Stable API</li>
+            <div class="fragment">is not enough</div>
+          </ul>
+          <aside class="notes">
+             versioning in software systems
+               phenomenon in versioning
+             problem urgent in low-level software development.
+               low-level: other software relying on it to func consistently
+             as it usually goes, devs of the reliable software do understand their product is going
+               to be so since its very design stage.
+               concieve it to have a stable API
+             drives me to the second point of the talk
+          </aside>
+        </section>
+        <section>
+          <h2>Why it is hard</h2>
+          <ul>
+            <li>Undocumented behaviour</li>
+            <li>Sim City & Windows 95</li>
+          </ul>
+          <aside class="notes">
+            stable consistent API is sometimes not enough
+             a strict sense of it should not only be the API which is to conform
+               to the previous version behaviour but also the every single piece of information
+               on the underlying software accessible to a user.
+               to say nothing about responding to interactions undocumented or even prohibited in the API contract.
+             consider an example of a notorious city simulator game under the name of SimCity. on market since MS-DOS times
+               turned out not to work with Win95. used memory after freeing it. MS spent resources to introduce a
+               specially designed mode of memory management.
+             turning to my next point i'll try to clarify why such policy is the way to go in the OS development.
+          </aside>
+        </section>
+        <section>
+          <h2>What if we don't</h2>
+          <ul>
+            <li>Loss of customer base</li>
+            <li>The whole companies</li>
+          </ul>
+          <aside class="notes">
+             imagine what would have happened if they had refused to support the game in the new windows.
+             considering the game was having its rise in popularity, it would have cost them a solid amount of their customers
+             who will buy win95 just to discover their game is not supported there. refund.
+             it's the whole approach of microsoft versioning. 
+             what's more, lots of companies can't do without a program or two which are quite outdated.
+             managers will not update if they are told that it's not working on the new version.
+             thousands of computers. microsoft could not afford to let such a great sum of money go.
+          </aside>
+        </section>
+        <section>
+          <h2>Points</h2>
+          <h3>Backwards Compatibility</h3>
+          <ul>
+            <li>Concept</li>
+            <li>Why it is hard</li>
+            <li>What if we don't</li>
+          </ul>
+        </section>
+        <section>
+          <h1>THE END</h1>
+        </section>
+      </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return true; }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+      
+    </script>
+  </body>
+</html>

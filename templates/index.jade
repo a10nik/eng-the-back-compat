@@ -1,0 +1,83 @@
+//- Use the presentation layout so we can keep this clean
+extends layouts/presentation
+
+//- Customize the title, meta description, and author using this block.
+block title
+  title Backwards Compatibility
+
+
+//- Add your slides here. See templates/includes/_mixins.jade for information 
+//- on how `+slide` works.
+block slides
+  +slide
+    h1 Backwards Compatibility
+    p
+      small Artyom Desyatnikov
+    aside.notes
+      | title. going to explore the book... 
+      
+  +slide
+    h2 Points
+    h3 Backwards Compatibility
+    ul
+      li Concept
+      li Why it is hard
+      li What if we don't
+
+  +slide
+    h2 Concept
+    ul
+      li Versioning
+      li Consistence between versions
+      li Stable API
+      .fragment is not enough
+    aside.notes
+      |  versioning in software systems
+      |    phenomenon in versioning
+      |  problem urgent in low-level software development.
+      |    low-level: other software relying on it to func consistently
+      |  as it usually goes, devs of the reliable software do understand their product is going
+      |    to be so since its very design stage.
+      |    concieve it to have a stable API
+      |  drives me to the second point of the talk
+    
+  +slide
+    h2 Why it is hard
+    ul
+      li Undocumented behaviour
+      li Sim City & Windows 95
+    aside.notes
+      | stable consistent API is sometimes not enough
+      |  a strict sense of it should not only be the API which is to conform
+      |    to the previous version behaviour but also the every single piece of information
+      |    on the underlying software accessible to a user.
+      |    to say nothing about responding to interactions undocumented or even prohibited in the API contract.
+      |  consider an example of a notorious city simulator game under the name of SimCity. on market since MS-DOS times
+      |    turned out not to work with Win95. used memory after freeing it. MS spent resources to introduce a
+      |    specially designed mode of memory management.
+      |  turning to my next point i'll try to clarify why such policy is the way to go in the OS development.
+
+  +slide
+    h2 What if we don't
+    ul
+      li Loss of customer base
+      li The whole companies
+    aside.notes
+      |  imagine what would have happened if they had refused to support the game in the new windows.
+      |  considering the game was having its rise in popularity, it would have cost them a solid amount of their customers
+      |  who will buy win95 just to discover their game is not supported there. refund.
+      |  it's the whole approach of microsoft versioning. 
+      |  what's more, lots of companies can't do without a program or two which are quite outdated.
+      |  managers will not update if they are told that it's not working on the new version.
+      |  thousands of computers. microsoft could not afford to let such a great sum of money go.
+
+  +slide
+    h2 Points
+    h3 Backwards Compatibility
+    ul
+      li Concept
+      li Why it is hard
+      li What if we don't
+      
+  +slide
+    h1 THE END
